@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Plate Recognition</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚗 License Plate Recognition</h1>
+            <p class="subtitle">Upload an image to detect and recognize license plates</p>
+        </header>
+
+        <main>
+            <section class="upload-section">
+                <div class="drop-zone" id="dropZone">
+                    <div class="drop-zone-content">
+                        <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                        </svg>
+                        <p class="drop-zone-text">Drag & drop an image here</p>
+                        <p class="drop-zone-or">or</p>
+                        <input type="file" id="fileInput" accept="image/jpeg,image/jpg,image/png,image/bmp" hidden>
+                        <button class="btn btn-secondary" id="browseBtn">Browse Files</button>
+                    </div>
+                </div>
+
+                <div class="preview-section" id="previewSection" style="display: none;">
+                    <h3>Selected Image</h3>
+                    <div class="preview-container">
+                        <img id="previewImage" src="" alt="Preview">
+                    </div>
+                    <div class="preview-actions">
+                        <button class="btn btn-secondary" id="clearBtn">Clear</button>
+                        <button class="btn btn-primary" id="recognizeBtn">Recognize License Plate</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="status-section" id="statusSection" style="display: none;">
+                <div class="status-message" id="statusMessage"></div>
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </section>
+
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <h2>Recognition Results</h2>
+                
+                <div class="plate-info" id="plateInfo">
+                    <div class="plate-result" id="plateResult"></div>
+                </div>
+
+                <div class="images-container">
+                    <div class="image-card" id="originalCard">
+                        <h4>Original Image</h4>
+                        <img id="originalImage" src="" alt="Original">
+                    </div>
+                    <div class="image-card" id="plateCard">
+                        <h4>Detected License Plate</h4>
+                        <img id="plateImage" src="" alt="License Plate">
+                    </div>
+                </div>
+
+                <div class="results-actions">
+                    <button class="btn btn-secondary" id="newImageBtn">Process New Image</button>
+                </div>
+            </section>
+
+            <section class="history-section" id="historySection">
+                <h2>Session History</h2>
+                <div class="history-list" id="historyList">
+                    <p class="no-history">No images processed yet</p>
+                </div>
+                <button class="btn btn-small" id="clearHistoryBtn" style="display: none;">Clear History</button>
+            </section>
+        </main>
+
+        <footer>
+            <p>Powered by OpenCV and OCR technology</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
