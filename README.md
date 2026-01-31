@@ -29,6 +29,8 @@ npm install license-plate-recognizer
 
 ## Usage
 
+### Programmatic Usage
+
 Here's a basic example of how to use the package:
 
 ```typescript
@@ -45,6 +47,43 @@ recognizeLicensePlate(imagePath)
   })
   .catch(error => console.error('Error:', error));
 ```
+
+### Web Interface
+
+This package also includes a web-based interface for easy license plate recognition through a browser.
+
+#### Starting the Web Server
+
+After installing dependencies and building the project:
+
+```bash
+npm run build
+npm run web
+```
+
+The server will start on `http://localhost:3000` (or a custom port if you set the `PORT` environment variable).
+
+#### Web Interface Features
+
+- **Drag & Drop Upload**: Simply drag and drop images onto the upload zone
+- **File Browser**: Click to browse and select images from your computer
+- **Image Preview**: See the selected image before processing
+- **Real-time Processing**: Watch the recognition progress with visual feedback
+- **Results Display**: View detected license plates with both original and cropped images
+- **Session History**: Track all plates recognized in the current session
+
+#### Supported Image Formats
+
+- JPEG (.jpg, .jpeg)
+- PNG (.png)
+- BMP (.bmp)
+
+#### API Endpoints
+
+- `GET /api/status` - Health check endpoint
+- `POST /api/recognize` - Upload and process an image for license plate recognition
+
+The web interface automatically saves processed images to the `output` directory, organized by date.
 
 ## API
 

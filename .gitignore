@@ -67,7 +67,6 @@ dist
 
 # Gatsby files
 .cache/
-public
 
 # vuepress build output
 .vuepress/dist
@@ -90,6 +89,9 @@ public
 # Temporary folders
 tmp/
 temp/
+
+# Upload directory for web interface
+uploads/
 
 # Output directory
 output
